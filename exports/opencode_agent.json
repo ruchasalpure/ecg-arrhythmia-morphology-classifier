@@ -1,0 +1,8 @@
+{
+  "agent_id": "ecg-arrhythmia-morphology-classifier",
+  "protocol": "opencode/v1",
+  "capabilities": [
+    "autonomous",
+    "governed"
+  ]
+}
