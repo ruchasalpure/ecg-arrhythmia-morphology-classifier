@@ -1,26 +1,30 @@
 spec_version: "0.1.0"
-name: "ecg-arrhythmia-morphology-classifier"
-version: "1.0.0"
-category: "healthcare"
+name: ecg-arrhythmia-morphology-classifier
+version: 1.0.0
+description: Delineates P-Q-R-S-T fiducial points across 12-lead electrocardiograms to classify atrial fibrillation, ventricular tachycardias, and prolonged QTc intervals.
 author: "Rucha Salpure"
-description: "Delineates P-Q-R-S-T fiducial points across 12-lead electrocardiograms to classify atrial fibrillation, ventricular tachycardias, and prolonged QTc intervals"
-capabilities:
-  - "ecg-fiducial-wave-delineation"
-  - "autonomous-decision-making"
-  - "explainable-auditing"
-  - "multi-agent-collaboration"
+license: MIT
+model:
+  preferred: claude-opus-4-6
+  fallback:
+    - claude-sonnet-4-5-20250929
+  constraints:
+    temperature: 0.2
+    max_tokens: 4096
 skills:
-  - "ecg-fiducial-wave-delineation"
-tools:
-  - "python_executor"
-  - "audit_logger"
-  - "schema_validator"
+  - ecg-fiducial-wave-delineation
+tools: []
+delegation:
+  mode: auto
 runtime:
-  environment: "python3.11"
-  memory_limit: "4GB"
-  timeout_seconds: 300
-governance:
-  audit_logging: true
-  human_in_the_loop: false
-  maker_checker: true
-  explainability_required: true
+  max_turns: 50
+  timeout: 300
+compliance:
+  risk_tier: standard
+  frameworks: []
+tags:
+  - healthcare
+  - autonomous-agent
+  - opengap-verified
+metadata:
+  repository: "https://github.com/ruchasalpure/ecg-arrhythmia-morphology-classifier"
